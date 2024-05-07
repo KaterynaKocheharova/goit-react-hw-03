@@ -1,12 +1,14 @@
-import { useState, useEffect, useId } from "react";
+import { useState, useEffect } from "react";
 
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
+import css from "./App.module.css";
 
 export default function App() {
   const contactsKey = "contacts";
-  // CONTACTS STATE
+  // ================================= CONTACTS STATE
+
   const [contacts, setContacts] = useState(() => {
     const lsContacts = localStorage.getItem(contactsKey);
     if (lsContacts !== null) {
@@ -20,23 +22,39 @@ export default function App() {
       ];
     }
   });
-  // NAME FILTER STATE
+
+  // =============================== NAME FILTER STATE
   const [nameFilter, setNameFilter] = useState("");
-  // SAVE DATA TO LS
+
+  // =============================== SAVE CONTACTS TO LS
   useEffect(() => {
     localStorage.setItem(contactsKey, JSON.stringify(contacts));
   }, [contacts]);
 
+  // ================================= GETTING FILTERED CONTACTS
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(nameFilter.toLowerCase())
   );
 
+  // ================================= ADDING CONTACTS
+  function addContact(contactObject) {
+    setContacts((prevContacts) => [...prevContacts, contactObject]);
+  }
+
+  // ================================= DELETE CONTACTS
+  function deleteContact(id) {
+    setContacts((prevContacts) =>
+      prevContacts.filter((contact) => contact.id !== id)
+    );
+  }
+
+  // =============================== MARKUP AND PASSING PROPS
   return (
     <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
+      <h1 className={css["main-title"]}>Phonebook</h1>
+      <ContactForm onAddContact={addContact} />
       <SearchBox currentNameFilter={nameFilter} onFilter={setNameFilter} />
-      <ContactList contactsArr={filteredContacts} />
+      <ContactList contactsArr={filteredContacts} onDelete={deleteContact} />
     </div>
   );
 }

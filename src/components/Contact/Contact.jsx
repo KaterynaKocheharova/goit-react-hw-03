@@ -1,13 +1,15 @@
 import { CiUser } from "react-icons/ci";
 import { CiPhone } from "react-icons/ci";
 import { IconContext } from "react-icons";
-
 import css from "./Contact.module.css";
 
-export default function Contact({ contactData: { name, number } }) {
+export default function Contact({
+  contactData: { name, number, id },
+  onDelete,
+}) {
   return (
     <li className={css["contact-item"]}>
-      <div>
+      <div className={css["contact-info-wrapper"]}>
         <div className={css["item-icon-box"]}>
           <IconContext.Provider value={{ className: "contact-person-icon" }}>
             <div>
@@ -25,7 +27,9 @@ export default function Contact({ contactData: { name, number } }) {
           <p>{number}</p>
         </div>
       </div>
-      <button className={css["delete-button"]}>Delete contact</button>
+      <button className={css["delete-button"]} onClick={() => onDelete(id)}>
+        Delete contact
+      </button>
     </li>
   );
 }

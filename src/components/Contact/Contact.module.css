@@ -10,6 +10,7 @@
 }
 
 .delete-button {
+  align-self: center;
   padding: 1rem;
   border: 0;
   background-color: var(--first-color);
@@ -28,4 +29,10 @@
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+}
+
+.contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
