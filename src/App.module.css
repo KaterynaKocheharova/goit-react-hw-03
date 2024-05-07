@@ -11,13 +11,16 @@
   margin-left: auto;
 }
 
-.top-container {
+@media screen and (min-width: 768px) {
+  .top-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 5rem;
   row-gap: 5rem;
+  }
 }
+
 
 .main-title {
   text-align: center;
