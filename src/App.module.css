@@ -5,8 +5,8 @@
   max-width: 95%;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -16,6 +16,7 @@
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 5rem;
+  row-gap: 5rem;
 }
 
 .main-title {
