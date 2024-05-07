@@ -1,6 +1,7 @@
 .form {
   display: inline-flex;
   justify-content: space-between;
+  wrap: flex-wrap;
   column-gap: 2rem;
   padding: var(--big-box-padding);
   background-color: var(--main-background-color);
