@@ -50,10 +50,12 @@ export default function App() {
 
   // =============================== MARKUP AND PASSING PROPS
   return (
-    <div>
+    <div className={css.container}>
       <h1 className={css["main-title"]}>Phonebook</h1>
-      <ContactForm onAddContact={addContact} />
-      <SearchBox currentNameFilter={nameFilter} onFilter={setNameFilter} />
+      <div className={css["top-container"]}>
+        <ContactForm onAddContact={addContact} />
+        <SearchBox currentNameFilter={nameFilter} onFilter={setNameFilter} />
+      </div>
       <ContactList contactsArr={filteredContacts} onDelete={deleteContact} />
     </div>
   );

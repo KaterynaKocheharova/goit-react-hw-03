@@ -16,6 +16,12 @@
   background-color: var(--first-color);
   border-radius: var(--main-border-radius);
   cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.delete-button:hover,
+.delete-button:focus {
+  background-color: var(--second-color);
 }
 
 .item-icon-box {

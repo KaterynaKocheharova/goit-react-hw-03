@@ -1,3 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--medium-mb);
+  max-width: 95%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 5rem;
+}
+
 .main-title {
-  margin-bottom: var(--medium-mb);
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 500;
 }

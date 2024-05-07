@@ -3,10 +3,10 @@
   justify-content: space-between;
   column-gap: 2rem;
   padding: var(--big-box-padding);
+  background-color: var(--main-background-color);
   border: 1px solid var(--first-color);
   border-radius: var(--main-border-radius);
   box-shadow: var(--main-box-shadow);
-  margin-bottom: var(--medium-mb);
 }
 
 @media screen and (min-width: 700px) {
@@ -46,4 +46,10 @@
   border: none;
   border-radius: var(--main-border-radius);
   cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--second-color);
 }
