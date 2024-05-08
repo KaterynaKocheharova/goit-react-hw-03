@@ -36,7 +36,7 @@ export default function ContactForm({ onAddContact }) {
       validationSchema={AddContactSchema}
     >
       <Form className={css.form}>
-        <div>
+        <div className={css["inputs-container"]}>
           <div className={css["form-input-box"]}>
             <label htmlFor={nameId}>Name</label>
             <Field className={css.input} id={nameId} name="name" />

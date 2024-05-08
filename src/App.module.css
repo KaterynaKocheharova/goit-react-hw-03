@@ -1,7 +1,4 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--medium-mb);
   max-width: 95%;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -13,17 +10,21 @@
 
 @media screen and (min-width: 768px) {
   .top-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  column-gap: 5rem;
-  row-gap: 5rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+    flex-wrap: wrap;
   }
 }
 
-
 .main-title {
   text-align: center;
-  font-size: 4.5rem;
   font-weight: 500;
+  margin-bottom: var(--medium-mb);
+}
+
+@media screen and (min-width: 700px) {
+  .main-title {
+    font-size: 4.5rem;
+  }
 }
